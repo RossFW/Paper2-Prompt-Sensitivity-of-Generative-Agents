@@ -8,11 +8,20 @@ prompt? This paper varies persona phrasing, awareness framing, and related
 prompt features in the GABM epidemic setting and measures how agent behavior
 shifts — establishing that prompt design is itself a modeling choice.
 
-> **Status:** Virginia Tech preliminary-examination paper (2023); not externally
-> published. The simulation engine is the GABM epidemic model
-> ([bear96/GABM-Epidemic](https://github.com/bear96/GABM-Epidemic),
-> arXiv:2307.04986) run with modified prompts; see Paper 1
-> ([Paper1-Epidemic-Generative-Agent-Based-Model](https://github.com/RossFW/Paper1-Epidemic-Generative-Agent-Based-Model)).
+> **Status:** Virginia Tech preliminary-examination paper (2023); not externally published.
+
+## Code & data provenance
+
+- **Simulation engine — not in this repo.** The epidemic simulations were run with
+  the **GABM epidemic model** ([bear96/GABM-Epidemic](https://github.com/bear96/GABM-Epidemic),
+  arXiv:2307.04986), modified with the prompt-sensitivity variations studied here.
+  That engine is also mirrored in **Paper 1**
+  ([Paper1-Epidemic-Generative-Agent-Based-Model](https://github.com/RossFW/Paper1-Epidemic-Generative-Agent-Based-Model)).
+  The simulation code is **not duplicated** in this repo.
+- **Original raw outputs — partial.** Some of the original 2023 simulation files
+  live on other machines. What's included here is the processed analysis data
+  (`Graphs and Data/`), the manuscript, and a self-contained, reproducible
+  regression (below).
 
 ## Repository layout
 
@@ -32,9 +41,19 @@ Regression Framework (Feb 2026)/ Dummy-variable OLS analysis scripts
 Literature Review from Park et al's paper.xlsx
 ```
 
-## Notes
+## Reproducing the regression
 
-- The `Regression Framework (Feb 2026)/` is the OLS comparison framework
-  (`Mobility ~ NewCases + NewCases² + Treatment + Treatment×NewCases`) later
-  reused as `prepare_comparison.py` in Paper 3.
-- Simulation code is not duplicated here — see Paper 1 / bear96 above.
+`Regression Framework (Feb 2026)/` is a self-contained, dummy-variable OLS
+comparison (`Mobility ~ NewCases + NewCases² + Treatment + Treatment×NewCases`).
+Its input (`Graphs and Data/Paper2_data_for_analysis.xlsx`) is in this repo, so
+the result (`paper2_regression_results.xlsx`) regenerates end-to-end:
+
+```bash
+cd "Regression Framework (Feb 2026)"
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+python run_analysis.py        # reads ../Graphs and Data/, writes paper2_regression_results.xlsx
+```
+
+It analyzes the *Aware* and *Learn* prompt comparisons. (This same OLS framework
+later became `prepare_comparison.py` in Paper 3.)

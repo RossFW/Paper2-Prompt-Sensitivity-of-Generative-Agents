@@ -13,8 +13,9 @@ from regression_analysis import RegressionAnalyzer
 import os
 
 # Paths
-PAPER2_DATA = "../../Paper #2 Generative Agent Prompt Sensisitivity Analysis/Graphs and Data/Paper2_data_for_analysis.xlsx"
-PAPER3_DATA = "paper3_data_for_analysis.xlsx"  # Placeholder - update when ready
+# Paper 2 input data lives in this repo, one level up in "Graphs and Data".
+PAPER2_DATA = "../Graphs and Data/Paper2_data_for_analysis.xlsx"
+PAPER3_DATA = "paper3_data_for_analysis.xlsx"  # Placeholder — Paper 3 lives in its own repo
 
 
 def run_paper2_analysis():
