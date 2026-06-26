@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Sensitivity of Generative Agents</title>
+<meta name="description" content="How sensitive is generative-agent behavior to the prompt? A prompt- and persona-sensitivity study using a generative-agent epidemic model.">
+<style>
+  :root{
+    --maroon:#861F41; --orange:#C95B0C; --ink:#1a1a1a; --muted:#5b5b5b;
+    --line:#e7e4df; --bg:#fbfaf8; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  header{border-top:5px solid var(--maroon);}
+  .kicker{
+    font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--maroon);font-weight:700;margin:40px 0 14px;
+  }
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(30px,5vw,46px);line-height:1.12;font-weight:700;
+    letter-spacing:-.01em;margin-bottom:22px;
+  }
+  .authors{font-size:18px;line-height:1.5;margin-bottom:6px}
+  .affil{font-size:14px;color:var(--muted);margin-bottom:20px}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+  .badge{
+    font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:999px;
+    background:#f1ece4;color:#6b5535;border:1px solid #e3dac9;
+  }
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+  a.btn{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    font-size:15px;font-weight:600;padding:11px 18px;border-radius:10px;
+    border:1.5px solid var(--line);color:var(--ink);background:var(--card);
+    transition:.15s ease;
+  }
+  a.btn:hover{border-color:var(--maroon);color:var(--maroon);transform:translateY(-1px)}
+  a.btn.primary{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+  a.btn.primary:hover{background:#6d1934;color:#fff}
+  .divider{height:1px;background:var(--line);margin:38px 0}
+  section h2{font-family:Georgia,serif;font-size:22px;margin-bottom:14px;font-weight:700}
+  .abstract{font-size:17px;color:#2a2a2a;line-height:1.72}
+  .summary{
+    margin-top:22px;padding:16px 20px;border-left:4px solid var(--orange);
+    background:#fff7ef;border-radius:0 8px 8px 0;font-size:15.5px;
+  }
+  .summary b{color:var(--orange)}
+  .pdf-frame{
+    width:100%;height:78vh;min-height:560px;margin-top:18px;
+    border:1px solid var(--line);border-radius:10px;background:#fff;
+  }
+  footer{
+    margin-top:48px;padding:28px 0 50px;border-top:1px solid var(--line);
+    font-size:13.5px;color:var(--muted);
+  }
+  footer a{color:var(--maroon);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  @media (max-width:560px){.pdf-frame{height:62vh}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="kicker">Virginia Tech · Industrial &amp; Systems Engineering</p>
+    <h1>Prompt Sensitivity of Generative Agents: Evidence from an Epidemic Model</h1>
+    <p class="authors">Ross Williams</p>
+    <p class="affil">Industrial &amp; Systems Engineering, Virginia Tech</p>
+    <div class="badges">
+      <span class="badge">Preliminary Examination · 2023</span>
+      <span class="badge">Prompt Sensitivity</span>
+      <span class="badge">Generative Agents</span>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="paper.pdf">📄 Read the Paper (PDF)</a>
+      <a class="btn" href="https://github.com/RossFW/Paper2-Prompt-Sensitivity-of-Generative-Agents">Code &amp; Data</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="divider"></div>
+
+  <section>
+    <h2>Abstract</h2>
+    <p class="abstract">
+      As generative AI gains traction, researchers are investigating its potential to serve as
+      proxies for humans. From undergoing cognitive psychology experiments to experiencing an
+      epidemic, generative agents — agents powered by generative AI models — produce realistic
+      human behavior when prompted. This study explores the sensitivity of these generative
+      agents&rsquo; behavior to prompt modifications and varied persona names of the agents. To
+      assess this sensitivity, we use a generative-agent epidemic model, wherein each agent is
+      prompted daily on whether it wants to isolate or commingle with other agents. We found
+      that using synonymous prompts results in negligible changes to the model&rsquo;s outcomes.
+      However, minor variations in prompts, as well as contextual changes, do influence the
+      model&rsquo;s results. Lastly, our data indicates that different persona names assigned to
+      generative agents do not significantly impact epidemic outcomes.
+    </p>
+    <div class="summary">
+      <b>One-sentence summary:</b> In an epidemic model, generative agents exhibit behavior that
+      is insensitive to synonymous prompt and persona-name modifications, but sensitive to slight
+      and contextual prompt modifications.
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2>The Paper</h2>
+    <iframe class="pdf-frame" src="paper.pdf#view=FitH" title="Prompt Sensitivity of Generative Agents — full paper"></iframe>
+  </section>
+
+  <footer>
+    Ross Williams · <a href="mailto:rossfw@vt.edu">rossfw@vt.edu</a> ·
+    <a href="https://github.com/RossFW/Paper2-Prompt-Sensitivity-of-Generative-Agents">GitHub repository</a><br>
+    Virginia Tech Preliminary Examination, 2023.
+  </footer>
+</div>
+</body>
+</html>
